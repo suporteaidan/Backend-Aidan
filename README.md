@@ -28,12 +28,17 @@ poetry install
 Activate environment:
 
 poetry env activate
+
 ⚙️ Environment Variables
+
 Create a .env file in the project root:
 
 DATABASE_URL=postgresql+asyncpg://USER:PASSWORD@HOST:PORT/DATABASE
+
 ▶️ Run the Application
-uvicorn app.main:app --reload
+
+poetry run uvicorn app.main:app --reload
+
 Swagger documentation:
 
 http://localhost:8000/docs

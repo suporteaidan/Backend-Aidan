@@ -47,3 +47,5 @@ class User(Base):
     default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc), nullable=False)
 
     profile: Mapped["Profile"] = relationship("Profile", back_populates="user", uselist=False)
+
+    nfes = relationship("NFE", back_populates="user")
