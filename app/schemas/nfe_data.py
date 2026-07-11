@@ -20,7 +20,11 @@ class NFEMarketData(BaseModel):
 
     cnpj: str
     market_name: str
-    market_address: str
+    market_street: str 
+    market_number: str 
+    market_district: str 
+    market_city: str 
+    market_state: str 
 
 class NFEData(BaseModel):
     """

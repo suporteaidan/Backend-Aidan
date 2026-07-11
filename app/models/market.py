@@ -1,4 +1,4 @@
-from app.models.base import Base
+from app.db.base import Base
 from sqlalchemy import String, Float, DateTime
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.sql import func
@@ -21,7 +21,30 @@ class Market(Base):
 
     name: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
 
-    address: Mapped[str] = mapped_column(String(255), nullable=False)
+    street: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True,
+    )
+
+    number: Mapped[str | None] = mapped_column(
+        String(50),
+        nullable=True,
+    )
+
+    district: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True,
+    )
+
+    city: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True,
+    )
+
+    state: Mapped[str | None] = mapped_column(
+        String(2),
+        nullable=True,
+    )
 
     latitude: Mapped[float | None] = mapped_column(
         Float,
