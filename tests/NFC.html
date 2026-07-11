@@ -1,0 +1,531 @@
+<html class="sat-ui-theme ui-mobile">
+
+<head>
+    <base
+        href="https://sat.sef.sc.gov.br/tax.NET/Sat.DFe.NFCe.Web/Consultas/NFCe_Detalhes.aspx?rq=t8BOzGQxqyEOU%2BAoWnK2NE7dU8S9xNKtYSxbNXISChVHgS4159pdWhyR804cgxZ4NuY8oxaqEO7bFT7TDH3ZSKFb6BhF4NpOL3GP%2FY7u0cPNx8iWQEQS1zJJFoIF6POhFZ2ZqbY1dHDkNDJg1Bt2%2FoJF%2FgCwUyDFCofln4FBQpAI2wnEcRRpPw%3D%3D">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="Sistema de Administração Tributária da Secretaria de Estado da Fazenda de Santa Catarina.">
+    <link id="favicon"
+        href="/tax.NET/WebResource.axd?d=WwVHsdjpMUOAGl0M32aKbsYZbH3C9dLPBWhE5Khgi1hS86R0X297ZdlYP-HWQqWMjlJ98x-e02xFJLZGOS27-CT1fwFG2iws5wQ_G2dC0RGxvpe0qCjzG18z-IcK8xa3Gu9wMedvdxSOUJgq0&amp;t=639186915560000000"
+        rel="shortcut icon" type="image/x-icon">
+    <title>Consulta Pública de NFCe</title>
+    <link id="cssFont-Material"
+        href="/tax.NET/WebResource.axd?d=tZLD3-ZXDAWlDugh9DdVaZ2BCjxTaGUYSx_drLN8U0ANJ_iOCT74JiQEGeFfmS-9yIbjCCjhOcCLr_kdnl7fMzAnaB0-W53qOoocDyr8wFqHgNfvPeNxbuMAUBtSwBCYC1Fpt_qHgRqm91Enx6FaUCbAOdo1&amp;t=639186915560000000"
+        rel="stylesheet" type="text/css">
+    <link id="cssFont-Roboto"
+        href="/tax.NET/WebResource.axd?d=TAZ8_-VgpfT6ReEL9PqZKftFn7URdF-mhUfHb3WQ6ON7pQ3WEfidaVyt7s2YBUWXp3f46jU3-cV8tm7Kkq0ERFdbGZ739EUQRgWG2oSLqADpFP2qz2mXWe6weQUCPE7LE4-TePVBCRoCHWDhShz2HYhlyz01&amp;t=639186915560000000"
+        rel="stylesheet" type="text/css">
+    <link id="cssBootstrap"
+        href="/tax.NET/WebResource.axd?d=lDpCe6CAN_FPtrF-_zCmvK3n-jAgpsRUQmjW1kPTPnN_801IJv5ubdSKdn0qoGQWvyTzEHlHyfq_6VRozNZLEKEs7agkhXstKjXFIbVN63PQ1iwjrXHBirwHupwuED2CRv1cz0ptqs7qDcPY0&amp;t=639186915560000000"
+        rel="stylesheet" type="text/css">
+    <link id="cssFont-Glyphicons"
+        href="/tax.NET/WebResource.axd?d=ZQSdIeoHh_JHNe0UhN80CAUPYBYNOObc-Hzf9KT9UdBFnF3xWVPqKop9VeAHvsjjv1WZMt1fX6iR6Deh7Icpsxa5xc1xU4seNYhNfvd2oPdXOvrhwDjrGK-Aj8Sx5v7vKGZiM3NOhDDlw65qeKHxibgJbkg1&amp;t=639186915560000000"
+        rel="stylesheet" type="text/css">
+    <link id="cssPage"
+        href="/tax.NET/WebResource.axd?d=cQJGbdUDos80BR2Zdvp-miW2R4OUroBG5iaLuUrltDrY-ixrfAwDgaLk_Nv8o5JD03TGRoAbIMSez4Hq7QaZH-raLYsvXSXFH_BtUwrY2DdFUz5NsyxRMH2r-Qky_jPRf0wX2Wly9QrJrgzQ0&amp;t=639186915560000000"
+        rel="stylesheet" type="text/css">
+    <link id="cssValidationSummary"
+        href="/tax.NET/WebResource.axd?d=NBeodhYD65Su4u9luquhujl-CulysjYmH0NBMMM-DcUdNzHQ3feKNYLXgebCij78F4tKV8i8SFXY4q4huNxdgBAB4lAfhPU5sqLbVG-skTWY3yKWJ2Oc9WwPDkaisAi0dHdOVKqRRkIISnKmg230GvYCHts1&amp;t=639186915560000000"
+        rel="stylesheet" type="text/css">
+    <link id="PageTheme"
+        href="/tax.NET/WebResourceHandler.axd?Sat.Framework.Web.UI.WebResources.StyleSheets.PageTheme.css"
+        rel="stylesheet" type="text/css">
+    <link id="cssBasePanel"
+        href="/tax.NET/WebResource.axd?d=iZ0_74YpbPXygRtI7Z6zA9ImpDIr8rJjgulOa4SFBmKVxgb8KcPgC1mdK0ZkVN5PZGXj5g77gVZdE3k6IateSPoOsDvG6bu5o0cdBO3mRzmAQdcn516BBvmXD4mZnGGU3a1VCjVLaEAKZ6rbR-LH49f6foMBzXtSTHdDms3n6MHwGop050FKdPtOUJM1&amp;t=639186915700000000"
+        rel="stylesheet" type="text/css">
+    <link id="cssIconControl"
+        href="/tax.NET/WebResource.axd?d=30YSbjDJgLmHrU07jk58mGoy7KqJT_1yvzsnbGCUA-poIZgyOMuYbonTW6sR5yBjlzMYugBIIUykmXBmr-prI-h7klu504MMsXUUbyV3L_of7SPhhUbfgDlkPvaRkl3J62DYUKTxRhEebAFEdVz-Vp9ie5RiShzkqiOV4fml0JVVQJg06Vb382frNPo1&amp;t=639186915700000000"
+        rel="stylesheet" type="text/css">
+    <link id="cssBaseButton"
+        href="/tax.NET/WebResource.axd?d=3jQkiag2LCS0LlR_rhOt1-1ZjyX8UsCwvrwViFhuR2NpXosf534rccuW0qC2B7tkAUH8gKqEVMveWBSZFuR6-zrrVFOZ0-onHWQdgs4YfxxQISlXD_bdKwJXOU8jBvcbU-nTNttjuEZf5oiG83_u1sPy0b6g5CXp2JOjBdEMxnh65LWVLhYjZ-Sp1y01&amp;t=639186915700000000"
+        rel="stylesheet" type="text/css">
+    <link id="cssUpdateProgress"
+        href="/tax.NET/WebResource.axd?d=6ua9c3oPqYQu2RR1s7eTSEvax7P0UsJPaYWriahXpcekauxHAamHmkhIyp3FpaHvRigZb73F-6eGX5UvvcW11RNa3e8rrhACgaGILfKDh8arR1VgE-XwAGz1g1RU8nsY5Vlp0eJA7x2l_8WTr4owPDfJYbs1&amp;t=639186915560000000"
+        rel="stylesheet" type="text/css">
+    <script
+        src="/tax.NET/WebResource.axd?d=3Ana46qO7iod3ZqHQP_O2mx1GPUyYyurVZN39tRGlNHF-O56S2PZrql0VhLy4E5UErvqx6f9g0-8K6iwt7e10SEs8LbLo54PnhfK1jMgyEYreprce-8qx1WmRvyFSwhEh4YOTdPIc3Xs31VSD5VNHzWw0v6VLHeUW2XqLC9GSvTzJy5pXh1e08W-Lihq4Npp-AeMxXi6ZOGlJuOV0&amp;t=639186915700000000"
+        type="text/javascript"></script>
+</head>
+
+<body class="sat-bs ui-mobile-viewport ui-overlay-a" style="">
+    <div data-role="page"
+        data-url="/tax.NET/Sat.DFe.NFCe.Web/Consultas/NFCe_Detalhes.aspx?rq=t8BOzGQxqyEOU+AoWnK2NE7dU8S9xNKtYSxbNXISChVHgS4159pdWhyR804cgxZ4NuY8oxaqEO7bFT7TDH3ZSKFb6BhF4NpOL3GP/Y7u0cPNx8iWQEQS1zJJFoIF6POhFZ2ZqbY1dHDkNDJg1Bt2/oJF/gCwUyDFCofln4FBQpAI2wnEcRRpPw=="
+        tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="">
+        <form method="post"
+            action="/tax.NET/Sat.DFe.NFCe.Web/Consultas/NFCe_Detalhes.aspx?rq=t8BOzGQxqyEOU%2BAoWnK2NE7dU8S9xNKtYSxbNXISChVHgS4159pdWhyR804cgxZ4NuY8oxaqEO7bFT7TDH3ZSKFb6BhF4NpOL3GP%2FY7u0cPNx8iWQEQS1zJJFoIF6POhFZ2ZqbY1dHDkNDJg1Bt2%2FoJF%2FgCwUyDFCofln4FBQpAI2wnEcRRpPw%3D%3D"
+            id="Main" class="sat-ui-form">
+            <div class="aspNetHidden">
+                <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+                <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                    value="/wEPDwUJNzY1NzY1NDkzDxYGHgdfcGFnZUlEBSRhNzMzNjZiNi01ZWE2LTRlYzQtYjVhMC04YzBmYmRmYzc3NGEeO1NhdC5GcmFtZXdvcmsuV2ViLlBhZ2VFeHRlbnNpb25zLkNvbnRyb2xzUmVnaXN0ZXJlZFRvSGVhZGVyMrUDAAEAAAD/////AQAAAAAAAAAEAQAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAICAkCAAAADAAAAAwAAAARAgAAABAAAAAGAwAAAAdmYXZpY29uBgQAAAAQY3NzRm9udC1NYXRlcmlhbAYFAAAADmNzc0ZvbnQtUm9ib3RvBgYAAAAMY3NzQm9vdHN0cmFwBgcAAAASY3NzRm9udC1HbHlwaGljb25zBggAAAAHY3NzUGFnZQYJAAAAFGNzc1ZhbGlkYXRpb25TdW1tYXJ5BgoAAAAJUGFnZVRoZW1lBgsAAAAMY3NzQmFzZVBhbmVsBgwAAAAOY3NzSWNvbkNvbnRyb2wGDQAAAA1jc3NCYXNlQnV0dG9uBg4AAAARY3NzVXBkYXRlUHJvZ3Jlc3MNBAseOVNhdC5GcmFtZXdvcmsuV2ViLlBhZ2VFeHRlbnNpb25zLkNvbnRyb2xzUmVnaXN0ZXJlZFNjcmlwdDLeBwABAAAA/////wEAAAAAAAAABAEAAAB/U3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQMAAAAGX2l0ZW1zBV9zaXplCF92ZXJzaW9uBgAACAgJAgAAAA4AAAAOAAAAEQIAAAAQAAAABgMAAAA3U2F0LkZyYW1ld29yay5XZWIuVUkuV2ViUmVzb3VyY2VzLkphdmFTY3JpcHRzLkpRdWVyeS5qcwYEAAAAPlNhdC5GcmFtZXdvcmsuV2ViLlVJLldlYlJlc291cmNlcy5KYXZhU2NyaXB0cy5KUXVlcnktQ29va2llLmpzBgUAAABCU2F0LkZyYW1ld29yay5XZWIuVUkuV2ViUmVzb3VyY2VzLkphdmFTY3JpcHRzLkpRdWVyeS1TbGltU2Nyb2xsLmpzBgYAAAA6U2F0LkZyYW1ld29yay5XZWIuVUkuV2ViUmVzb3VyY2VzLkphdmFTY3JpcHRzLkJvb3RzdHJhcC5qcwYHAAAAOVNhdC5GcmFtZXdvcmsuV2ViLlVJLldlYlJlc291cmNlcy5KYXZhU2NyaXB0cy5JbnRlcm5hbC5qcwYIAAAAOlNhdC5GcmFtZXdvcmsuV2ViLlVJLldlYlJlc291cmNlcy5KYXZhU2NyaXB0cy5Qcm90b3R5cGUuanMGCQAAADRTYXQuRnJhbWV3b3JrLldlYi5VSS5XZWJSZXNvdXJjZXMuSmF2YVNjcmlwdHMuU2F0LmpzBgoAAAA7U2F0LkZyYW1ld29yay5XZWIuVUkuV2ViUmVzb3VyY2VzLkphdmFTY3JpcHRzLkluaXRpYWxpemUuanMGCwAAAE5TYXQuRnJhbWV3b3JrLldlYi5VSS5XZWJDb250cm9scy5XZWJSZXNvdXJjZXMuSmF2YVNjcmlwdHMuVmFsaWRhdGlvblN1bW1hcnkuanMGDAAAAEZTYXQuRnJhbWV3b3JrLldlYi5VSS5XZWJDb250cm9scy5XZWJSZXNvdXJjZXMuSmF2YVNjcmlwdHMuQmFzZVBhbmVsLmpzBg0AAABHU2F0LkZyYW1ld29yay5XZWIuVUkuV2ViQ29udHJvbHMuV2ViUmVzb3VyY2VzLkphdmFTY3JpcHRzLkJhc2VCdXR0b24uanMJDQAAAAkNAAAABg4AAAAQVXBkYXRlUHJvZ3Jlc3NJRA0CCxYCZg9kFgICAw8WAh4GYWN0aW9uBf4BL3RheC5ORVQvU2F0LkRGZS5ORkNlLldlYi9Db25zdWx0YXMvTkZDZV9EZXRhbGhlcy5hc3B4P3JxPXQ4Qk96R1F4cXlFT1UlMkJBb1duSzJORTdkVThTOXhOS3RZU3hiTlhJU0NoVkhnUzQxNTlwZFdoeVI4MDRjZ3haNE51WThveGFxRU83YkZUN1RESDNaU0tGYjZCaEY0TnBPTDNHUCUyRlk3dTBjUE54OGlXUUVRUzF6SkpGb0lGNlBPaEZaMlpxYlkxZEhEa05ESmcxQnQyJTJGb0pGJTJGZ0N3VXlERkNvZmxuNEZCUXBBSTJ3bkVjUlJwUHclM0QlM0QWAgIHD2QWCAIBDxYCHgdWaXNpYmxlaGQCAw8WAh4JaW5uZXJodG1sBbU+PGxpbmsgcmVsPSJzdHlsZXNoZWV0IiB0eXBlPSJ0ZXh0L2NzcyIgaHJlZj0iLi4vZXN0aWxvcy9qcXVlcnkubW9iaWxlLTEuNC41Lm1pbi5jc3MiPg0KPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiB0eXBlPSJ0ZXh0L2NzcyIgaHJlZj0iLi4vZXN0aWxvcy9uZmNlTW9iX2llLmNzcyI+DQo8bGluayByZWw9InN0eWxlc2hlZXQiIHR5cGU9InRleHQvY3NzIiBocmVmPSIuLi9lc3RpbG9zL25mY2VNb2IuY3NzIj48c2NyaXB0IGxhbmd1YWdlPSJqYXZhc2NyaXB0IiBzcmM9Ii4uL2pzL2pxdWVyeS5qcyI+PC9zY3JpcHQ+PHNjcmlwdCBsYW5ndWFnZT0iamF2YXNjcmlwdCIgc3JjPSIuLi9qcy9qcXVlcnkubW9iaWxlLTEuNC41Lm1pbi5qcyI+PC9zY3JpcHQ+PHNjcmlwdCBsYW5ndWFnZT0iamF2YXNjcmlwdCIgc3JjPSIuLi9qcy9qcXVlcnl1aS5qcyI+PC9zY3JpcHQ+PHNjcmlwdCBsYW5ndWFnZT0iamF2YXNjcmlwdCIgc3JjPSIuLi9qcy9pbmRleC5qcyI+PC9zY3JpcHQ+PGxpbmsgcmVsPSJzdHlsZXNoZWV0IiB0eXBlPSJ0ZXh0L2NzcyIgaHJlZj0iLi4vZXN0aWxvcy9wcmludC5jc3MiPg0KPGRpdiBkYXRhLXJvbGU9ImhlYWRlciIgeG1sbnM6bj0iaHR0cDovL3d3dy5wb3J0YWxmaXNjYWwuaW5mLmJyL25mZSIgeG1sbnM6Y2hhdmU9Imh0dHA6Ly9leHNsdC5vcmcvY2hhdmVhY2Vzc28iIHhtbG5zOnI9Imh0dHA6Ly93d3cuc2VycHJvLmdvdi5ici9uZmUvcmVtZXNzYW5mZS54c2QiPg0KICA8aDEgY2xhc3M9InRpdCI+PGltZyBzcmM9Ii4uXGltYWdlbnNcbG9nb05GQ2UucG5nIiB3aWR0aD0iMTEyIiBoZWlnaHQ9IjY0IiBhbHQ9Ik5GQy1lIj48cD5ET0NVTUVOVE8gQVVYSUxJQVIgREEgTk9UQSBGSVNDQUwgREUgQ09OU1VNSURPUiBFTEVUUsOUTklDQTwvcD4NCiAgICA8cD48L3A+DQogIDwvaDE+DQo8L2Rpdj4NCjxkaXYgZGF0YS1yb2xlPSJjb250ZW50IiB4bWxuczpuPSJodHRwOi8vd3d3LnBvcnRhbGZpc2NhbC5pbmYuYnIvbmZlIiB4bWxuczpjaGF2ZT0iaHR0cDovL2V4c2x0Lm9yZy9jaGF2ZWFjZXNzbyIgeG1sbnM6cj0iaHR0cDovL3d3dy5zZXJwcm8uZ292LmJyL25mZS9yZW1lc3NhbmZlLnhzZCI+DQogIDxkaXYgaWQ9ImNvbnRldWRvIj4NCiAgICA8ZGl2IGlkPSJhdmlzb3MiPjwvZGl2Pg0KICAgIDxkaXYgY2xhc3M9InR4dENlbnRlciI+DQogICAgICA8ZGl2IGlkPSJ1MjAiIGNsYXNzPSJ0eHRUb3BvIj5TREIgQ09NRVJDSU8gREUgQUxJTUVOVE9TIExUREE8L2Rpdj4NCiAgICAgIDxkaXYgY2xhc3M9InRleHQiPg0KCQkJCQkJCQlDTlBKOg0KCQkJCQkJCQkwOS40NzcuNjUyLzAwOTAtNjE8L2Rpdj4NCiAgICAgIDxkaXYgY2xhc3M9InRleHQiPlNDNDAxIFJGIEpPU0UgQ0FSTE9TIERBVVgNCgkJCQkJCQksDQoJCQkJCQkJOTU4MA0KCQkJCQkJCSwNCgkJCQkJCQkNCgkJCQkJCQksDQoJCQkJCQkJU1RPIEFOVE9OSU8gREUgTElTQk9BDQoJCQkJCQkJLA0KCQkJCQkJCUZMT1JJQU5PUE9MSVMNCgkJCQkJCQksDQoJCQkJCQkJU0M8L2Rpdj4NCiAgICA8L2Rpdj4NCiAgICA8dGFibGUgYm9yZGVyPSIwIiBhbGlnbj0iY2VudGVyIiBjZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiIGlkPSJ0YWJSZXN1bHQiIGRhdGEtZmlsdGVyPSJ0cnVlIj4NCiAgICAgIDx0ciBpZD0iSXRlbSArIDEiPg0KICAgICAgICA8dGQgdmFsaWduPSJ0b3AiPjxzcGFuIGNsYXNzPSJ0eHRUaXQiPkxFSVRFIElUQUxBQyBJTlRFRyAxTDwvc3Bhbj48c3BhbiBjbGFzcz0iUkNvZCI+DQoJCQkJCQkJCQkJKEPDs2RpZ286DQoJCQkJCQkJCQkJNzg5ODA4MDY0MDYxMQ0KCQkJCQkJCQkJCSkNCgkJCQkJCQkJCTwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9IlJxdGQiPjxzdHJvbmc+UXRkZS46PC9zdHJvbmc+MTwvc3Bhbj48c3BhbiBjbGFzcz0iUlVOIj48c3Ryb25nPlVOOiA8L3N0cm9uZz5VTjwvc3Bhbj48c3BhbiBjbGFzcz0iUnZsVW5pdCI+PHN0cm9uZz5WbC4gVW5pdC46PC9zdHJvbmc+DQoJCQkJCQkJCQkJwqANCgkJCQkJCQkJCQk0LDk4PC9zcGFuPjwvdGQ+DQogICAgICAgIDx0ZCBhbGlnbj0icmlnaHQiIHZhbGlnbj0idG9wIiBjbGFzcz0idHh0VGl0IG5vV3JhcCI+DQoJCQkJCQkJCQlWbC4gVG90YWwNCgkJCQkJCQkJCTxicj48c3BhbiBjbGFzcz0idmFsb3IiPjQsOTg8L3NwYW4+PC90ZD4NCiAgICAgIDwvdHI+DQogICAgICA8dHIgaWQ9Ikl0ZW0gKyAyIj4NCiAgICAgICAgPHRkIHZhbGlnbj0idG9wIj48c3BhbiBjbGFzcz0idHh0VGl0Ij5QQU8gVklTQ09OVEkgNDAwRyBUUkFEPC9zcGFuPjxzcGFuIGNsYXNzPSJSQ29kIj4NCgkJCQkJCQkJCQkoQ8OzZGlnbzoNCgkJCQkJCQkJCQk3ODkxOTYyMDUxMzM4DQoJCQkJCQkJCQkJKQ0KCQkJCQkJCQkJPC9zcGFuPjxicj48c3BhbiBjbGFzcz0iUnF0ZCI+PHN0cm9uZz5RdGRlLjo8L3N0cm9uZz4xPC9zcGFuPjxzcGFuIGNsYXNzPSJSVU4iPjxzdHJvbmc+VU46IDwvc3Ryb25nPlVOPC9zcGFuPjxzcGFuIGNsYXNzPSJSdmxVbml0Ij48c3Ryb25nPlZsLiBVbml0Ljo8L3N0cm9uZz4NCgkJCQkJCQkJCQnCoA0KCQkJCQkJCQkJCTQsOTk8L3NwYW4+PC90ZD4NCiAgICAgICAgPHRkIGFsaWduPSJyaWdodCIgdmFsaWduPSJ0b3AiIGNsYXNzPSJ0eHRUaXQgbm9XcmFwIj4NCgkJCQkJCQkJCVZsLiBUb3RhbA0KCQkJCQkJCQkJPGJyPjxzcGFuIGNsYXNzPSJ2YWxvciI+NCw5OTwvc3Bhbj48L3RkPg0KICAgICAgPC90cj4NCiAgICAgIDx0ciBpZD0iSXRlbSArIDMiPg0KICAgICAgICA8dGQgdmFsaWduPSJ0b3AiPjxzcGFuIGNsYXNzPSJ0eHRUaXQiPlBBTyBWSVNDT05USSA0MDBHIFRSQUQ8L3NwYW4+PHNwYW4gY2xhc3M9IlJDb2QiPg0KCQkJCQkJCQkJCShDw7NkaWdvOg0KCQkJCQkJCQkJCTc4OTE5NjIwNTEzMzgNCgkJCQkJCQkJCQkpDQoJCQkJCQkJCQk8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJScXRkIj48c3Ryb25nPlF0ZGUuOjwvc3Ryb25nPjE8L3NwYW4+PHNwYW4gY2xhc3M9IlJVTiI+PHN0cm9uZz5VTjogPC9zdHJvbmc+VU48L3NwYW4+PHNwYW4gY2xhc3M9IlJ2bFVuaXQiPjxzdHJvbmc+VmwuIFVuaXQuOjwvc3Ryb25nPg0KCQkJCQkJCQkJCcKgDQoJCQkJCQkJCQkJNCw5OTwvc3Bhbj48L3RkPg0KICAgICAgICA8dGQgYWxpZ249InJpZ2h0IiB2YWxpZ249InRvcCIgY2xhc3M9InR4dFRpdCBub1dyYXAiPg0KCQkJCQkJCQkJVmwuIFRvdGFsDQoJCQkJCQkJCQk8YnI+PHNwYW4gY2xhc3M9InZhbG9yIj40LDk5PC9zcGFuPjwvdGQ+DQogICAgICA8L3RyPg0KICAgICAgPHRyIGlkPSJJdGVtICsgNCI+DQogICAgICAgIDx0ZCB2YWxpZ249InRvcCI+PHNwYW4gY2xhc3M9InR4dFRpdCI+UE9LQU4gS0c8L3NwYW4+PHNwYW4gY2xhc3M9IlJDb2QiPg0KCQkJCQkJCQkJCShDw7NkaWdvOg0KCQkJCQkJCQkJCTU0MA0KCQkJCQkJCQkJCSkNCgkJCQkJCQkJCTwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9IlJxdGQiPjxzdHJvbmc+UXRkZS46PC9zdHJvbmc+MCw0OTwvc3Bhbj48c3BhbiBjbGFzcz0iUlVOIj48c3Ryb25nPlVOOiA8L3N0cm9uZz5LRzwvc3Bhbj48c3BhbiBjbGFzcz0iUnZsVW5pdCI+PHN0cm9uZz5WbC4gVW5pdC46PC9zdHJvbmc+DQoJCQkJCQkJCQkJwqANCgkJCQkJCQkJCQk0LDk4PC9zcGFuPjwvdGQ+DQogICAgICAgIDx0ZCBhbGlnbj0icmlnaHQiIHZhbGlnbj0idG9wIiBjbGFzcz0idHh0VGl0IG5vV3JhcCI+DQoJCQkJCQkJCQlWbC4gVG90YWwNCgkJCQkJCQkJCTxicj48c3BhbiBjbGFzcz0idmFsb3IiPjIsNDQ8L3NwYW4+PC90ZD4NCiAgICAgIDwvdHI+DQogICAgICA8dHIgaWQ9Ikl0ZW0gKyA1Ij4NCiAgICAgICAgPHRkIHZhbGlnbj0idG9wIj48c3BhbiBjbGFzcz0idHh0VGl0Ij5NQUNBIEdBUkRFTiBGUlVJVCAxS0c8L3NwYW4+PHNwYW4gY2xhc3M9IlJDb2QiPg0KCQkJCQkJCQkJCShDw7NkaWdvOg0KCQkJCQkJCQkJCTc5MDgzNTU2MDA0MTQNCgkJCQkJCQkJCQkpDQoJCQkJCQkJCQk8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJScXRkIj48c3Ryb25nPlF0ZGUuOjwvc3Ryb25nPjE8L3NwYW4+PHNwYW4gY2xhc3M9IlJVTiI+PHN0cm9uZz5VTjogPC9zdHJvbmc+VU48L3NwYW4+PHNwYW4gY2xhc3M9IlJ2bFVuaXQiPjxzdHJvbmc+VmwuIFVuaXQuOjwvc3Ryb25nPg0KCQkJCQkJCQkJCcKgDQoJCQkJCQkJCQkJMTAsOTg8L3NwYW4+PC90ZD4NCiAgICAgICAgPHRkIGFsaWduPSJyaWdodCIgdmFsaWduPSJ0b3AiIGNsYXNzPSJ0eHRUaXQgbm9XcmFwIj4NCgkJCQkJCQkJCVZsLiBUb3RhbA0KCQkJCQkJCQkJPGJyPjxzcGFuIGNsYXNzPSJ2YWxvciI+MTAsOTg8L3NwYW4+PC90ZD4NCiAgICAgIDwvdHI+DQogICAgICA8dHIgaWQ9Ikl0ZW0gKyA2Ij4NCiAgICAgICAgPHRkIHZhbGlnbj0idG9wIj48c3BhbiBjbGFzcz0idHh0VGl0Ij5CQU5BTkEgQ0FUVVJSQSBLRzwvc3Bhbj48c3BhbiBjbGFzcz0iUkNvZCI+DQoJCQkJCQkJCQkJKEPDs2RpZ286DQoJCQkJCQkJCQkJMjkwNA0KCQkJCQkJCQkJCSkNCgkJCQkJCQkJCTwvc3Bhbj48YnI+PHNwYW4gY2xhc3M9IlJxdGQiPjxzdHJvbmc+UXRkZS46PC9zdHJvbmc+MSwxMDU8L3NwYW4+PHNwYW4gY2xhc3M9IlJVTiI+PHN0cm9uZz5VTjogPC9zdHJvbmc+S0c8L3NwYW4+PHNwYW4gY2xhc3M9IlJ2bFVuaXQiPjxzdHJvbmc+VmwuIFVuaXQuOjwvc3Ryb25nPg0KCQkJCQkJCQkJCcKgDQoJCQkJCQkJCQkJNSw3ODwvc3Bhbj48L3RkPg0KICAgICAgICA8dGQgYWxpZ249InJpZ2h0IiB2YWxpZ249InRvcCIgY2xhc3M9InR4dFRpdCBub1dyYXAiPg0KCQkJCQkJCQkJVmwuIFRvdGFsDQoJCQkJCQkJCQk8YnI+PHNwYW4gY2xhc3M9InZhbG9yIj42LDM5PC9zcGFuPjwvdGQ+DQogICAgICA8L3RyPg0KICAgICAgPHRyIGlkPSJJdGVtICsgNyI+DQogICAgICAgIDx0ZCB2YWxpZ249InRvcCI+PHNwYW4gY2xhc3M9InR4dFRpdCI+TEFSQU5KQSBQRVJBIEtHPC9zcGFuPjxzcGFuIGNsYXNzPSJSQ29kIj4NCgkJCQkJCQkJCQkoQ8OzZGlnbzoNCgkJCQkJCQkJCQkxODINCgkJCQkJCQkJCQkpDQoJCQkJCQkJCQk8L3NwYW4+PGJyPjxzcGFuIGNsYXNzPSJScXRkIj48c3Ryb25nPlF0ZGUuOjwvc3Ryb25nPjEsMjwvc3Bhbj48c3BhbiBjbGFzcz0iUlVOIj48c3Ryb25nPlVOOiA8L3N0cm9uZz5LRzwvc3Bhbj48c3BhbiBjbGFzcz0iUnZsVW5pdCI+PHN0cm9uZz5WbC4gVW5pdC46PC9zdHJvbmc+DQoJCQkJCQkJCQkJwqANCgkJCQkJCQkJCQk0LDc4PC9zcGFuPjwvdGQ+DQogICAgICAgIDx0ZCBhbGlnbj0icmlnaHQiIHZhbGlnbj0idG9wIiBjbGFzcz0idHh0VGl0IG5vV3JhcCI+DQoJCQkJCQkJCQlWbC4gVG90YWwNCgkJCQkJCQkJCTxicj48c3BhbiBjbGFzcz0idmFsb3IiPjUsNzQ8L3NwYW4+PC90ZD4NCiAgICAgIDwvdHI+DQogICAgPC90YWJsZT4NCiAgICA8ZGl2IGlkPSJ0b3RhbE5vdGEiIGNsYXNzPSJ0eHRSaWdodCI+DQogICAgICA8ZGl2IGlkPSJsaW5oYVRvdGFsIj48bGFiZWw+UXRkLiB0b3RhbCBkZSBpdGVuczo8L2xhYmVsPjxzcGFuIGNsYXNzPSJ0b3RhbE51bWIiPjc8L3NwYW4+PC9kaXY+DQogICAgICA8ZGl2IGlkPSJsaW5oYVRvdGFsIiBjbGFzcz0ibGluaGFTaGFkZSI+PGxhYmVsPlZhbG9yIGEgcGFnYXIgUiQ6PC9sYWJlbD48c3BhbiBjbGFzcz0idG90YWxOdW1iIHR4dE1heCI+NDAsNTE8L3NwYW4+PC9kaXY+DQogICAgICA8ZGl2IGlkPSJsaW5oYUZvcm1hIj48bGFiZWw+Rm9ybWEgZGUgcGFnYW1lbnRvOjwvbGFiZWw+PHNwYW4gY2xhc3M9InRvdGFsTnVtYiB0eHRUaXRSIj5WYWxvciBwYWdvIFIkOjwvc3Bhbj48L2Rpdj4NCiAgICAgIDxkaXYgaWQ9ImxpbmhhVG90YWwiPjxsYWJlbCBjbGFzcz0idHgiPg0KCQkJCQkJCQkJCQlDYXJ0w6NvIGRlIETDqWJpdG8NCgkJCQkJCQkJCQk8L2xhYmVsPjxzcGFuIGNsYXNzPSJ0b3RhbE51bWIiPjQwLDUxPC9zcGFuPjwvZGl2Pg0KICAgICAgPGRpdiBpZD0ibGluaGFUb3RhbCI+PC9kaXY+DQogICAgPC9kaXY+DQogIDwvZGl2Pg0KICA8ZGl2IGlkPSJpbmZvcyIgY2xhc3M9InR4dENlbnRlciI+DQogICAgPGRpdiBkYXRhLXJvbGU9ImNvbGxhcHNpYmxlIiBkYXRhLWNvbGxhcHNlZC1pY29uPSJjYXJhdC1kIiBkYXRhLWV4cGFuZGVkLWljb249ImNhcmF0LXUiIGRhdGEtY29sbGFwc2VkPSJmYWxzZSI+DQogICAgICA8aDQ+SW5mb3JtYcOnw7VlcyBnZXJhaXMgZGEgTm90YTwvaDQ+DQogICAgICA8dWwgZGF0YS1yb2xlPSJsaXN0dmlldyIgZGF0YS1pbnNldD0iZmFsc2UiPg0KICAgICAgICA8bGk+PHN0cm9uZz5FTUlTU8ODTyBOT1JNQUw8L3N0cm9uZz48YnI+PGJyPjxzdHJvbmc+TsO6bWVybzogPC9zdHJvbmc+NjI5MTY8c3Ryb25nPiBTw6lyaWU6IDwvc3Ryb25nPjEwMTxzdHJvbmc+IEVtaXNzw6NvOiA8L3N0cm9uZz4yNi8wNi8yMDI2IDE1OjAzOjE3DQoJCQkJCQkJCS0gVmlhIENvbnN1bWlkb3IgMg0KCQkJCQkJCQk8YnI+PGJyPjxzdHJvbmc+UHJvdG9jb2xvIGRlIEF1dG9yaXphw6fDo286IDwvc3Ryb25nPjI0MjI2MDk4NDU2MzIwNSAgICAgICAyNi8wNi8yMDI2IA0KICAgICAgICDDoHMNCiAgICAgIDE1OjAzOjIwPGJyPjxicj48c3Ryb25nPg0KCQkJCQkJCQkJCUFtYmllbnRlIGRlIFByb2R1w6fDo28gLQ0KCQkJCQkJCQkJDQoJCQkJCQkJCQlWZXJzw6NvIFhNTDoNCgkJCQkJCQkJCTQuMDANCgkJCQkJCQkJCS0gVmVyc8OjbyBYU0xUOiAyLjA3DQoJCQkJCQkJCTwvc3Ryb25nPjwvbGk+DQogICAgICA8L3VsPg0KICAgIDwvZGl2Pg0KICAgIDxkaXYgZGF0YS1yb2xlPSJjb2xsYXBzaWJsZSIgZGF0YS1jb2xsYXBzZWQtaWNvbj0iY2FyYXQtZCIgZGF0YS1leHBhbmRlZC1pY29uPSJjYXJhdC11IiBkYXRhLWNvbGxhcHNlZD0iZmFsc2UiPg0KICAgICAgPGg0PkNoYXZlIGRlIGFjZXNzbzwvaDQ+DQogICAgICA8dWwgZGF0YS1yb2xlPSJsaXN0dmlldyIgZGF0YS1pbnNldD0iZmFsc2UiPg0KICAgICAgICA8bGk+DQoJCQkJCQkJCUNvbnN1bHRlIHBlbGEgQ2hhdmUgZGUgQWNlc3NvIGVtDQoJCQkJCQkJCQ0KCQkJCQkJCQlodHRwczovL3NhdC5zZWYuc2MuZ292LmJyL25mY2UvY29uc3VsdGE8YnI+PGJyPjxzdHJvbmc+Q2hhdmUgZGUgYWNlc3NvOjwvc3Ryb25nPjxicj48c3BhbiBjbGFzcz0iY2hhdmUiPjQyMjYgMDYwOSA0Nzc2IDUyMDAgOTA2MSA2NTEwIDEwMDAgMDYyOSAxNjE2IDAxNzYgMzIzMzwvc3Bhbj48L2xpPg0KICAgICAgPC91bD4NCiAgICA8L2Rpdj4NCiAgICA8ZGl2IGRhdGEtcm9sZT0iY29sbGFwc2libGUiIGRhdGEtY29sbGFwc2VkLWljb249ImNhcmF0LWQiIGRhdGEtZXhwYW5kZWQtaWNvbj0iY2FyYXQtdSIgZGF0YS1jb2xsYXBzZWQ9ImZhbHNlIj4NCiAgICAgIDxoND5Db25zdW1pZG9yPC9oND4NCiAgICAgIDx1bCBkYXRhLXJvbGU9Imxpc3R2aWV3IiBkYXRhLWluc2V0PSJmYWxzZSI+DQogICAgICAgIDxsaT48c3Ryb25nPkNOUEo6IDwvc3Ryb25nPjA4LjM3Ny41ODgvMDAwMS0wOTwvbGk+DQogICAgICAgIDxsaT48c3Ryb25nPlJhesOjbyBTb2NpYWw6IDwvc3Ryb25nPjwvbGk+DQogICAgICA8L3VsPg0KICAgIDwvZGl2Pg0KICAgIDxkaXYgZGF0YS1yb2xlPSJjb2xsYXBzaWJsZSIgZGF0YS1jb2xsYXBzZWQtaWNvbj0iY2FyYXQtZCIgZGF0YS1leHBhbmRlZC1pY29uPSJjYXJhdC11IiBkYXRhLWNvbGxhcHNlZD0iZmFsc2UiPg0KICAgICAgPGg0PkluZm9ybWHDp8O1ZXMgZGUgaW50ZXJlc3NlIGRvIGNvbnRyaWJ1aW50ZTwvaDQ+DQogICAgICA8dWwgZGF0YS1yb2xlPSJsaXN0dmlldyIgZGF0YS1pbnNldD0iZmFsc2UiPg0KICAgICAgICA8bGk+WyMjRk9OVEU6IElNUE9TVE9TIElCUFQgKEZPTlRFOiBJQlBURU1QUkVTT01FVFJPLkNPTS5CUiA5MjU4OUEpIFRSSUJVVE9TIFRPVEFJUyBJTkNJREVOVEVTIChMRUkgRkVERVJBTCAxMi43NDEyMDEyKSAtIEZFREVSQUwgUiQgNSw0NSBFU1RBRFVBTCBSJCA0LDg3IE1VTklDSVBBTCBSJCAwLDAwIDsgQ09POiA3OTAxNiwgUERWOiAxMDFdPC9saT4NCiAgICAgIDwvdWw+DQogICAgPC9kaXY+DQogIDwvZGl2Pg0KPC9kaXY+ZAIFDw8WAh4EVGV4dAUTMDYvMDcvMjAyNiAxNTo0MzozNWRkAgcPDxYEHghDc3NDbGFzcwUTcGFuZWwgcGFuZWwtZGVmYXVsdB4EXyFTQgICZBYEZg8PFgQfBwUkcGFuZWwtaGVhZGluZyBzYXQtcGFuZWwtaGVhZGluZyBoaWRlHwgCAmRkAgEPDxYEHwcFFHNhdC1wYW5lbC1jb250ZW50IGluHwgCAmQWAmYPDxYEHwcFCnBhbmVsLWJvZHkfCAICZGRkHctWxcIZf3Fq1plWjz/YyuEqwpk=">
+            </div>
+
+            <script type="text/javascript">
+                //<![CDATA[
+                var theForm = document.forms['Main'];
+                if (!theForm) {
+                    theForm = document.Main;
+                }
+                function __doPostBack(eventTarget, eventArgument) {
+                    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                        theForm.__EVENTTARGET.value = eventTarget;
+                        theForm.__EVENTARGUMENT.value = eventArgument;
+                        theForm.submit();
+                    }
+                }
+                //]]>
+            </script>
+
+
+            <script
+                src="/tax.NET/WebResource.axd?d=UAJ1aQIOaAYd4rvzqUeWTOJ4sxEPw0nqOGbLviGVr7YVZilyrpBDirsQSgI1&amp;t=638901428248157332"
+                type="text/javascript"></script>
+
+
+            <script src="https://app.sat.sef.sc.gov.br/fwk-res/net48/JQuery.js?t=kVFXcM6M"
+                type="text/javascript"></script>
+            <script src="https://app.sat.sef.sc.gov.br/fwk-res/net48/JQuery-Cookie.js?t=Hjqf8SUh"
+                type="text/javascript"></script>
+            <script src="https://app.sat.sef.sc.gov.br/fwk-res/net48/JQuery-SlimScroll.js?t=aRurJQQ4"
+                type="text/javascript"></script>
+            <script src="https://app.sat.sef.sc.gov.br/fwk-res/net48/Bootstrap.js?t=q7DimDod"
+                type="text/javascript"></script>
+            <script src="https://app.sat.sef.sc.gov.br/fwk-res/net48/Internal.js?t=oD7TJM1z"
+                type="text/javascript"></script>
+            <script src="https://app.sat.sef.sc.gov.br/fwk-res/net48/Prototype.js?t=Lq7dOi1h"
+                type="text/javascript"></script>
+            <script src="https://app.sat.sef.sc.gov.br/fwk-res/net48/Sat.js?t=BvgoYsyy" type="text/javascript"></script>
+            <script src="https://app.sat.sef.sc.gov.br/fwk-res/net48/Initialize.js?t=SNB96Oz7"
+                type="text/javascript"></script>
+            <script src="JavaScriptResourceHandler.axd" type="text/javascript"></script>
+            <script src="https://app.sat.sef.sc.gov.br/fwk-res/net48/ValidationSummary.js?t=8B17WauD"
+                type="text/javascript"></script>
+            <script src="https://app.sat.sef.sc.gov.br/fwk-res/net48/BasePanel.js?t=JymVKOD1"
+                type="text/javascript"></script>
+            <script src="https://app.sat.sef.sc.gov.br/fwk-res/net48/BaseButton.js?t=sUivh6kY"
+                type="text/javascript"></script>
+            <script
+                src="/tax.NET/ScriptResource.axd?d=_zcAn_M7bn3ZyxvOPu2CzAlsJBas2ApKuqhdwMFuLTBZkf0jcF7pakdhGBnCVg6ZtJ5hqKcGzQyxfPidXyGuW2Q06XNUfI_DQo2vraq3HW4Q2Cp0rmrHnVBr9BgKwhuXfVkWKA2&amp;t=5c0e0825"
+                type="text/javascript"></script>
+            <script
+                src="/tax.NET/ScriptResource.axd?d=9Q_XeFEOztfvqm9l9TKs2PKQZmfAwMnTkDSrASxuUn_9Cjaeyq3oKDVY-8zaHQHVIW0rDWsAihLrErQ2FmV4oX-jtlpHqkrhGHGJZK1xZPQQ7s1jCa7my88DQHtGCCbsUb123PIpUm5A9-5z0&amp;t=5c0e0825"
+                type="text/javascript"></script>
+            <div class="aspNetHidden">
+
+                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="660A77A3">
+                <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+                    value="/wEdAAV+vHrHed1r6L66rxzKgVkMBaX9jkWcmVRqHIakW3DP7pDSEt7aiW4si+GPZc26W+Y9lgyvxkg2GiD5uIt5l1JoIw0I+cj0Xj5y/EupCYPO6f1JOOp4JmWid8qS37jraG7elT+1">
+            </div>
+            <script type="text/javascript">
+                //<![CDATA[
+                Sys.WebForms.PageRequestManager._initialize('ctl00$scmMain', 'Main', ['fctl00$ctnPageWindows', 'ctnPageWindows', 'fctl00$Body$conFooter$uppPanelButtons', 'Body_conFooter_uppPanelButtons', 'fctl00$updatableContainer', 'updatableContainer'], ['ctl00$Body$conFooter$btnDownload', 'Body_conFooter_btnDownload', 'ctl00$Body$conFooter$btnPrint', 'Body_conFooter_btnPrint', 'ctl00$Body$conFooter$btnVerDetalhe', 'Body_conFooter_btnVerDetalhe', 'ctl00$Body$conFooter', 'Body_conFooter', 'ctl00$postBackEventHandler', 'postBackEventHandler'], [], 90, 'ctl00');
+                //]]>
+            </script>
+
+            <div id="vasMain" style="display:none;">
+
+            </div>
+            <div id="ctnPageWindows">
+
+            </div>
+
+
+
+            <title>NFCe - Detalhes</title>
+
+
+
+            <div>
+                <div style="text-align: center; background-color: red;">
+
+                </div>
+                <div id="Body_xsl">
+                    <link rel="stylesheet" type="text/css" href="../estilos/jquery.mobile-1.4.5.min.css">
+                    <link rel="stylesheet" type="text/css" href="../estilos/nfceMob_ie.css">
+                    <link rel="stylesheet" type="text/css" href="../estilos/nfceMob.css">
+                    <script language="javascript" src="../js/jquery.js"></script>
+                    <script language="javascript" src="../js/jquery.mobile-1.4.5.min.js"></script>
+                    <script language="javascript" src="../js/jqueryui.js"></script>
+                    <script language="javascript" src="../js/index.js"></script>
+                    <link rel="stylesheet" type="text/css" href="../estilos/print.css">
+                    <div data-role="header" xmlns:n="http://www.portalfiscal.inf.br/nfe"
+                        xmlns:chave="http://exslt.org/chaveacesso" xmlns:r="http://www.serpro.gov.br/nfe/remessanfe.xsd"
+                        role="banner" class="ui-header ui-bar-inherit">
+                        <h1 class="tit ui-title" role="heading" aria-level="1"><img src="..\imagens\logoNFCe.png"
+                                width="112" height="64" alt="NFC-e">
+                            <p>DOCUMENTO AUXILIAR DA NOTA FISCAL DE CONSUMIDOR ELETRÔNICA</p>
+                            <p></p>
+                        </h1>
+                    </div>
+                    <div data-role="content" xmlns:n="http://www.portalfiscal.inf.br/nfe"
+                        xmlns:chave="http://exslt.org/chaveacesso" xmlns:r="http://www.serpro.gov.br/nfe/remessanfe.xsd"
+                        class="ui-content" role="main">
+                        <div id="conteudo">
+                            <div id="avisos"></div>
+                            <div class="txtCenter">
+                                <div id="u20" class="txtTopo">SDB COMERCIO DE ALIMENTOS LTDA</div>
+                                <div class="text">
+                                    CNPJ:
+                                    09.477.652/0090-61</div>
+                                <div class="text">SC401 RF JOSE CARLOS DAUX
+                                    ,
+                                    9580
+                                    ,
+
+                                    ,
+                                    STO ANTONIO DE LISBOA
+                                    ,
+                                    FLORIANOPOLIS
+                                    ,
+                                    SC</div>
+                            </div>
+                            <form class="ui-filterable">
+                                <div
+                                    class="ui-input-search ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear">
+                                    <input data-type="search" placeholder="Filtrar itens..."><a href="#" tabindex="-1"
+                                        aria-hidden="true"
+                                        class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-input-clear-hidden"
+                                        title="Clear text">Clear text</a></div>
+                            </form>
+                            <table border="0" align="center" cellpadding="0" cellspacing="0" id="tabResult"
+                                data-filter="true">
+                                <tbody>
+                                    <tr id="Item + 1">
+                                        <td valign="top"><span class="txtTit">LEITE ITALAC INTEG 1L</span><span
+                                                class="RCod">
+                                                (Código:
+                                                7898080640611
+                                                )
+                                            </span><br><span class="Rqtd"><strong>Qtde.:</strong>1</span><span
+                                                class="RUN"><strong>UN: </strong>UN</span><span
+                                                class="RvlUnit"><strong>Vl. Unit.:</strong>
+                                                &nbsp;
+                                                4,98</span></td>
+                                        <td align="right" valign="top" class="txtTit noWrap">
+                                            Vl. Total
+                                            <br><span class="valor">4,98</span>
+                                        </td>
+                                    </tr>
+                                    <tr id="Item + 2">
+                                        <td valign="top"><span class="txtTit">PAO VISCONTI 400G TRAD</span><span
+                                                class="RCod">
+                                                (Código:
+                                                7891962051338
+                                                )
+                                            </span><br><span class="Rqtd"><strong>Qtde.:</strong>1</span><span
+                                                class="RUN"><strong>UN: </strong>UN</span><span
+                                                class="RvlUnit"><strong>Vl. Unit.:</strong>
+                                                &nbsp;
+                                                4,99</span></td>
+                                        <td align="right" valign="top" class="txtTit noWrap">
+                                            Vl. Total
+                                            <br><span class="valor">4,99</span>
+                                        </td>
+                                    </tr>
+                                    <tr id="Item + 3">
+                                        <td valign="top"><span class="txtTit">PAO VISCONTI 400G TRAD</span><span
+                                                class="RCod">
+                                                (Código:
+                                                7891962051338
+                                                )
+                                            </span><br><span class="Rqtd"><strong>Qtde.:</strong>1</span><span
+                                                class="RUN"><strong>UN: </strong>UN</span><span
+                                                class="RvlUnit"><strong>Vl. Unit.:</strong>
+                                                &nbsp;
+                                                4,99</span></td>
+                                        <td align="right" valign="top" class="txtTit noWrap">
+                                            Vl. Total
+                                            <br><span class="valor">4,99</span>
+                                        </td>
+                                    </tr>
+                                    <tr id="Item + 4">
+                                        <td valign="top"><span class="txtTit">POKAN KG</span><span class="RCod">
+                                                (Código:
+                                                540
+                                                )
+                                            </span><br><span class="Rqtd"><strong>Qtde.:</strong>0,49</span><span
+                                                class="RUN"><strong>UN: </strong>KG</span><span
+                                                class="RvlUnit"><strong>Vl. Unit.:</strong>
+                                                &nbsp;
+                                                4,98</span></td>
+                                        <td align="right" valign="top" class="txtTit noWrap">
+                                            Vl. Total
+                                            <br><span class="valor">2,44</span>
+                                        </td>
+                                    </tr>
+                                    <tr id="Item + 5">
+                                        <td valign="top"><span class="txtTit">MACA GARDEN FRUIT 1KG</span><span
+                                                class="RCod">
+                                                (Código:
+                                                7908355600414
+                                                )
+                                            </span><br><span class="Rqtd"><strong>Qtde.:</strong>1</span><span
+                                                class="RUN"><strong>UN: </strong>UN</span><span
+                                                class="RvlUnit"><strong>Vl. Unit.:</strong>
+                                                &nbsp;
+                                                10,98</span></td>
+                                        <td align="right" valign="top" class="txtTit noWrap">
+                                            Vl. Total
+                                            <br><span class="valor">10,98</span>
+                                        </td>
+                                    </tr>
+                                    <tr id="Item + 6">
+                                        <td valign="top"><span class="txtTit">BANANA CATURRA KG</span><span
+                                                class="RCod">
+                                                (Código:
+                                                2904
+                                                )
+                                            </span><br><span class="Rqtd"><strong>Qtde.:</strong>1,105</span><span
+                                                class="RUN"><strong>UN: </strong>KG</span><span
+                                                class="RvlUnit"><strong>Vl. Unit.:</strong>
+                                                &nbsp;
+                                                5,78</span></td>
+                                        <td align="right" valign="top" class="txtTit noWrap">
+                                            Vl. Total
+                                            <br><span class="valor">6,39</span>
+                                        </td>
+                                    </tr>
+                                    <tr id="Item + 7">
+                                        <td valign="top"><span class="txtTit">LARANJA PERA KG</span><span class="RCod">
+                                                (Código:
+                                                182
+                                                )
+                                            </span><br><span class="Rqtd"><strong>Qtde.:</strong>1,2</span><span
+                                                class="RUN"><strong>UN: </strong>KG</span><span
+                                                class="RvlUnit"><strong>Vl. Unit.:</strong>
+                                                &nbsp;
+                                                4,78</span></td>
+                                        <td align="right" valign="top" class="txtTit noWrap">
+                                            Vl. Total
+                                            <br><span class="valor">5,74</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="totalNota" class="txtRight">
+                                <div id="linhaTotal"><label>Qtd. total de itens:</label><span class="totalNumb">7</span>
+                                </div>
+                                <div id="linhaTotal" class="linhaShade"><label>Valor a pagar R$:</label><span
+                                        class="totalNumb txtMax">40,51</span></div>
+                                <div id="linhaForma"><label>Forma de pagamento:</label><span
+                                        class="totalNumb txtTitR">Valor pago R$:</span></div>
+                                <div id="linhaTotal"><label class="tx">
+                                        Cartão de Débito
+                                    </label><span class="totalNumb">40,51</span></div>
+                                <div id="linhaTotal"></div>
+                            </div>
+                        </div>
+                        <div id="infos" class="txtCenter">
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u"
+                                data-collapsed="false"
+                                class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content">
+                                <h4 class="ui-collapsible-heading"><a href="#"
+                                        class="ui-collapsible-heading-toggle ui-btn ui-icon-carat-u ui-btn-icon-left ui-btn-inherit">Informações
+                                        gerais da Nota<span class="ui-collapsible-heading-status"> click to collapse
+                                            contents</span></a></h4>
+                                <div class="ui-collapsible-content ui-body-inherit" aria-hidden="false">
+
+                                    <ul data-role="listview" data-inset="false" class="ui-listview">
+                                        <li class="ui-li-static ui-body-inherit ui-first-child ui-last-child">
+                                            <strong>EMISSÃO NORMAL</strong><br><br><strong>Número:
+                                            </strong>62916<strong> Série: </strong>101<strong> Emissão:
+                                            </strong>26/06/2026 15:03:17
+                                            - Via Consumidor 2
+                                            <br><br><strong>Protocolo de Autorização: </strong>242260984563205
+                                            26/06/2026
+                                            às
+                                            15:03:20<br><br><strong>
+                                                Ambiente de Produção -
+
+                                                Versão XML:
+                                                4.00
+                                                - Versão XSLT: 2.07
+                                            </strong>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u"
+                                data-collapsed="false"
+                                class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content">
+                                <h4 class="ui-collapsible-heading"><a href="#"
+                                        class="ui-collapsible-heading-toggle ui-btn ui-icon-carat-u ui-btn-icon-left ui-btn-inherit">Chave
+                                        de acesso<span class="ui-collapsible-heading-status"> click to collapse
+                                            contents</span></a></h4>
+                                <div class="ui-collapsible-content ui-body-inherit" aria-hidden="false">
+
+                                    <ul data-role="listview" data-inset="false" class="ui-listview">
+                                        <li class="ui-li-static ui-body-inherit ui-first-child ui-last-child">
+                                            Consulte pela Chave de Acesso em
+
+                                            https://sat.sef.sc.gov.br/nfce/consulta<br><br><strong>Chave de
+                                                acesso:</strong><br><span class="chave">4226 0609 4776 5200 9061 6510
+                                                1000 0629 1616 0176 3233</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u"
+                                data-collapsed="false"
+                                class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content">
+                                <h4 class="ui-collapsible-heading"><a href="#"
+                                        class="ui-collapsible-heading-toggle ui-btn ui-icon-carat-u ui-btn-icon-left ui-btn-inherit">Consumidor<span
+                                            class="ui-collapsible-heading-status"> click to collapse contents</span></a>
+                                </h4>
+                                <div class="ui-collapsible-content ui-body-inherit" aria-hidden="false">
+
+                                    <ul data-role="listview" data-inset="false" class="ui-listview">
+                                        <li class="ui-li-static ui-body-inherit ui-first-child"><strong>CNPJ:
+                                            </strong>08.377.588/0001-09</li>
+                                        <li class="ui-li-static ui-body-inherit ui-last-child"><strong>Razão Social:
+                                            </strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u"
+                                data-collapsed="false"
+                                class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content">
+                                <h4 class="ui-collapsible-heading"><a href="#"
+                                        class="ui-collapsible-heading-toggle ui-btn ui-icon-carat-u ui-btn-icon-left ui-btn-inherit">Informações
+                                        de interesse do contribuinte<span class="ui-collapsible-heading-status"> click
+                                            to collapse contents</span></a></h4>
+                                <div class="ui-collapsible-content ui-body-inherit" aria-hidden="false">
+
+                                    <ul data-role="listview" data-inset="false" class="ui-listview">
+                                        <li class="ui-li-static ui-body-inherit ui-first-child ui-last-child">[##FONTE:
+                                            IMPOSTOS IBPT (FONTE: IBPTEMPRESOMETRO.COM.BR 92589A) TRIBUTOS TOTAIS
+                                            INCIDENTES (LEI FEDERAL 12.7412012) - FEDERAL R$ 5,45 ESTADUAL R$ 4,87
+                                            MUNICIPAL R$ 0,00 ; COO: 79016, PDV: 101]</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: none;">
+                    <span id="Body_lblDataHora">06/07/2026 15:43:35</span>
+                </div>
+            </div>
+            <div class="notprint" style="padding: 15px; text-align: center">
+                <div id="Body_conFooter" class="panel panel-default"
+                    style="background-color: #D8D8D8; border-color: #D8D8D8">
+                    <div class="panel-heading sat-panel-heading hide">
+                        <div class="panel-title sat-panel-title">
+                            <i></i><span class="sat-panel-title-text"></span>
+                        </div>
+                    </div>
+                    <div class="sat-panel-content in">
+                        <div class="panel-body">
+
+                        </div>
+                        <div class="panel-footer">
+                            <div id="Body_conFooter_uppPanelButtons">
+                                <a class="btn btn-default  ui-link" id="Body_conFooter_btnDownload"
+                                    href="javascript:__doPostBack('ctl00$Body$conFooter$btnDownload','')"><i
+                                        class="glyphicon glyphicon-download-alt sat-icon-with-text"></i><span
+                                        class="sat-btn-text">Baixar documento XML</span></a><a
+                                    class="btn btn-default  ui-link" onclick="javascript:window.print();"
+                                    id="Body_conFooter_btnPrint"
+                                    href="javascript:__doPostBack('ctl00$Body$conFooter$btnPrint','')"><i
+                                        class="glyphicon glyphicon-print sat-icon-with-text"></i><span
+                                        class="sat-btn-text">Imprimir página</span></a><a
+                                    class="btn btn-default  ui-link" id="Body_conFooter_btnVerDetalhe"
+                                    href="javascript:__doPostBack('ctl00$Body$conFooter$btnVerDetalhe','')"><i
+                                        class="glyphicon glyphicon-eye-open sat-icon-with-text"></i><span
+                                        class="sat-btn-text">Ver NFC-e detalhada</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+
+
+        <script type="text/javascript">
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function (sender, args) {
+                var error = args.get_error();
+                if (error != undefined) {
+                    var errorMessage = error.rawMessage;
+                    if (errorMessage == undefined) {
+                        errorMessage = error.message;
+                        if (errorMessage.indexOf(error.name) >= 0) {
+                            errorMessage = errorMessage.substr(error.name.length + 2);
+                        }
+                    }
+                    Sat.ShowMessage(Sat.MessageType.Error, errorMessage);
+                    args.set_errorHandled(true);
+                }
+            });
+        </script>
+        <a id="postBackEventHandler" href="javascript:__doPostBack('ctl00$postBackEventHandler','')"
+            class="ui-link"></a>
+        <div id="updatableContainer">
+
+        </div>
+        <div id="upgMain" style="display:none;" role="status" aria-hidden="true">
+            <div class="sat-up-mask">
+
+            </div>
+            <div class="sat-up-content">
+                <img class="sat-up-content-img"
+                    src="../../MasterPages/WebResourceHandler.axd?Sat.Framework.Web.UI.WebResources.Images.sat-loading.gif">
+                <div class="sat-up-content-msg">
+                    Aguarde. Estamos processando sua solicitação...
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            //<![CDATA[
+            var Page_ValidationSummaries = new Array(document.getElementById("vasMain"));
+            //]]>
+        </script>
+
+
+        <script type="text/javascript">
+            //<![CDATA[
+            Normalizar();//]]>
+        </script>
+        <script
+            role="startup">Internal.Page.EnableMultipleRequests = true; Internal.Types.Cnpj.EnableAlphanumeric = true;</script>
+        <script
+            role="startup">Sat.Helpers.HttpRequestHelper = JSON.parse('{"MaxAllowedContentLength":2147483648,"MaxRequestLength":2147483648}');</script>
+        <script role="startup">Sat.UrlBase = '../../';</script>
+        <script type="text/javascript">
+            //<![CDATA[
+
+            (function (id) {
+                var e = document.getElementById(id);
+                if (e) {
+                    e.dispose = function () {
+                        Array.remove(Page_ValidationSummaries, document.getElementById(id));
+                    }
+                    e = null;
+                }
+            })('vasMain');
+            //]]>
+        </script>
+        <script
+            role="startup">ValidationSummary_Initialize("/tax.NET/WebResource.axd?d=3Ana46qO7iod3ZqHQP_O2mx1GPUyYyurVZN39tRGlNHF-O56S2PZrql0VhLy4E5UErvqx6f9g0-8K6iwt7e10SEs8LbLo54PnhfK1jMgyEYreprce-8qx1WmRvyFSwhEh4YOTdPIc3Xs31VSD5VNHzWw0v6VLHeUW2XqLC9GSvTzJy5pXh1e08W-Lihq4Npp-AeMxXi6ZOGlJuOV0&t=639186915700000000");</script>
+        <script role="startup">Internal.Controls.BasePanel.CssTitleText = "sat-panel-title-text";</script>
+        <script type="text/javascript">
+            //<![CDATA[
+            Internal.Controls.UpdateProgress.ID = "upgMain"; Sys.Application.add_init(function () {
+                $create(Sys.UI._UpdateProgress, { "associatedUpdatePanelId": null, "displayAfter": 500, "dynamicLayout": true }, null, null, $get("upgMain"));
+            });
+            //]]>
+        </script>
+
+
+
+    </div>
+    <div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span>
+        <h1>loading</h1>
+    </div>
+</body>
+
+</html>
