@@ -17,6 +17,10 @@ from app.db.base import Base
 from app.models.profile import Profile
 from app.models.user import User
 from app.models.market import Market
+from app.models.nfe import NFE
+from app.models.product import Product
+from app.models.product_price import ProductPrice
+
 
 
 # Alembic Config object

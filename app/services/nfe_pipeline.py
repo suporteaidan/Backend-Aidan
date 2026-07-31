@@ -29,9 +29,9 @@ specialized service.
 
 from app.schemas.nfe_data import NFEData
 from app.services.clients.nfe_client import NFEClient
-from app.services.extractors.base_extractor import BaseExtractor
-
-
+from app.services.extractors.extractor_factory import ExtractorFactory
+from app.services.normalizers.nfe_normalizer import NfeNormalizer
+from app.services.enrichment.nfe_enrichment_service import NFEEnrichmentService
 
 class NfePipeline:
     """
@@ -44,7 +44,6 @@ class NfePipeline:
     - Extract raw structured data.
     - Normalize extracted values.
     - Enrich business information.
-    - Persist the final data.
 
     This class intentionally contains no business logic.
     """
@@ -53,15 +52,13 @@ class NfePipeline:
         self,
         client: NFEClient,
         extractor_factory: ExtractorFactory,
-        normalizer: NFENormalizer,
+        normalizer: NfeNormalizer,
         enrichment_service: NFEEnrichmentService,
-        persistence_service: NFEPersistenceService,
     ) -> None:
         self._client = client
         self._extractor_factory = extractor_factory
         self._normalizer = normalizer
         self._enrichment_service = enrichment_service
-        self._persistence_service = persistence_service
 
     async def process(self, qr_code_url: str) -> NFEData:
         """
@@ -82,20 +79,18 @@ class NfePipeline:
         html = await self._client.fetch(qr_code_url)
 
         # Get the appropriate extractor implementation.
-        extractor: BaseExtractor = self._extractor_factory.create()
+        extractor = self._extractor_factory.create()
 
         # Parse the HTML into a structured data object.
-        raw_nfe_data = extractor.extract(html)
+        extracted_data = await extractor.extract(html)
 
         # Normalize values such as dates, decimals and documents.
-        normalized_nfe_data = self._normalizer.normalize(raw_nfe_data)
+        normalized_nfe_data = self._normalizer.normalize(extracted_data)
 
         # Enrich the normalized data using external services.
         enriched_nfe_data = await self._enrichment_service.enrich(
             normalized_nfe_data
         )
 
-        # Persist the enriched data into the database.
-        await self._persistence_service.save(enriched_nfe_data)
 
         return enriched_nfe_data
