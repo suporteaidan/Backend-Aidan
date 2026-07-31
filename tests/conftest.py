@@ -6,6 +6,13 @@ from sqlalchemy.orm import sessionmaker
 
 from app.db.base import Base
 
+from app.models.market import Market
+from app.models.nfe import NFE
+from app.models.product import Product
+from app.models.product_price import ProductPrice
+from app.models.profile import Profile
+from app.models.user import User
+
 DATABASE_URL = "sqlite+aiosqlite:///:memory:"
 
 engine = create_async_engine(DATABASE_URL, future=True)

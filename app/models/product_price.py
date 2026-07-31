@@ -38,4 +38,4 @@ class ProductPrice(Base):
 
     market = relationship("Market", back_populates="products_price")
 
-    nfe = relationship("NFE", back_populates="products_price")
+    nfes = relationship("NFE", back_populates="products_price")

@@ -2,7 +2,7 @@ from datetime import datetime
 from sqlalchemy import String, ForeignKey, DateTime
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql import func
-from app.models.base import Base
+from app.db.base import Base
 
 class NFE(Base):
     """
@@ -36,8 +36,8 @@ class NFE(Base):
         nullable=False,
     )
 
-    user = relationship("User", back_populates="nfe")
+    user = relationship("User", back_populates="nfes")
 
-    market = relationship("Market", back_populates="nfe")
+    market = relationship("Market", back_populates="nfes")
 
-    products_price = relationship("ProductPrice", back_populates="nfe")
+    products_price = relationship("ProductPrice", back_populates="nfes")
