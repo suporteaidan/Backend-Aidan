@@ -18,6 +18,7 @@ from app.db.base import Base
 
 if TYPE_CHECKING:
     from app.models.profile import Profile
+    from app.models.nfe import NFE
 
 class User(Base):
     """
@@ -46,6 +47,8 @@ class User(Base):
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True),
     default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc), nullable=False)
 
-    profile: Mapped["Profile"] = relationship("Profile", back_populates="user", uselist=False)
+    profile: Mapped["Profile"] = relationship("Profile", back_populates="users", uselist=False)
 
-    nfes = relationship("NFE", back_populates="user")
+    nfes: Mapped[list["NFE"]] = relationship(
+            back_populates="user",
+        )

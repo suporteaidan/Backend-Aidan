@@ -1,9 +1,15 @@
 from app.db.base import Base
-from sqlalchemy import String, Float, DateTime
+from sqlalchemy import String, Float, DateTime, Index
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.sql import func
 from datetime import datetime
 from sqlalchemy.orm import relationship
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from app.models.nfe import NFE
+    from app.models.product_price import ProductPrice
+
 
 class Market(Base):
     """
@@ -15,33 +21,43 @@ class Market(Base):
     
     __tablename__ = "markets"
 
+    __table_args__ = (
+        Index("ix_markets_market_name", "market_name"),
+        Index(
+            "ix_markets_location",
+            "market_state",
+            "market_city",
+            "market_district",
+        ),
+    )
+
     id: Mapped[int] = mapped_column(primary_key=True)
 
     cnpj: Mapped[str] = mapped_column(String(14), nullable=False, unique=True, index=True)
 
-    name: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
+    market_name: Mapped[str] = mapped_column(String(255), nullable=False)
 
-    street: Mapped[str | None] = mapped_column(
+    market_street: Mapped[str] = mapped_column(
         String(255),
-        nullable=True,
+        nullable=False,
     )
 
-    number: Mapped[str | None] = mapped_column(
+    market_number: Mapped[str] = mapped_column(
         String(50),
-        nullable=True,
+        nullable=False,
     )
 
-    district: Mapped[str | None] = mapped_column(
+    market_district: Mapped[str] = mapped_column(
         String(255),
-        nullable=True,
+        nullable=False,
     )
 
-    city: Mapped[str | None] = mapped_column(
+    market_city: Mapped[str] = mapped_column(
         String(255),
-        nullable=True,
+        nullable=False,
     )
 
-    state: Mapped[str | None] = mapped_column(
+    market_state: Mapped[str | None] = mapped_column(
         String(2),
         nullable=True,
     )
@@ -69,6 +85,14 @@ class Market(Base):
         nullable=False,
     )
 
-    nfes = relationship("NFE", back_populates="market")
+    nfe: Mapped[list["NFE"]] = relationship(
+        back_populates="market",
+        lazy="raise",
+        passive_deletes=True,
+    )
 
-    products_price = relationship("ProductPrice", back_populates="market")
+    product_prices: Mapped[list["ProductPrice"]] = relationship(
+        back_populates="market",
+        lazy="raise",
+        passive_deletes=True,
+    )
