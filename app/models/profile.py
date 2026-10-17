@@ -52,4 +52,4 @@ class Profile(Base):
     default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc), nullable=False)
 
     # Relationship 
-    user: Mapped["User"] = relationship("User", back_populates="profile", uselist=False)
+    users: Mapped["User"] = relationship("User", back_populates="profile", uselist=False)

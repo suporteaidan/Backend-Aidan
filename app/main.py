@@ -1,26 +1,32 @@
-"""
-Application entry point.
+"""Application entry point.
 
 This module initializes the FastAPI application, configures global
-middleware, and includes API routes.
+application resources, and registers the versioned API router.
+
+Feature-specific routes are composed outside this module so that the
+application entry point remains independent from individual API domains.
 """
 
 from fastapi import FastAPI
 
-from app.api.v1.users import router as user_router
+from app.api.v1.router import api_router
 
-from app.api.v1.users import router as user_router
 
 app = FastAPI(
-    title = "Aindan API",
-    description = "API for Aindan application",
-    version = "1.0.0",
+    title="Aidan API",
+    description="API for Aidan application",
+    version="1.0.0",
 )
 
-# healthcheck endpoint
+
 @app.get("/health", tags=["health"])
-async def health_check():
+async def health_check() -> dict[str, str]:
+    """Return the current API health status."""
+
     return {"status": "ok"}
 
-# api v1
-app.include_router(user_router, prefix="/api/v1")
+
+app.include_router(
+    api_router,
+    prefix="/api/v1",
+)

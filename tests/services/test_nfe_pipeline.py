@@ -1,6 +1,7 @@
 """Tests for the NFC-e processing pipeline."""
 
 
+from abc import abstractmethod
 from datetime import datetime
 from decimal import Decimal
 from unittest.mock import AsyncMock, Mock
@@ -13,6 +14,9 @@ from app.services.extractors.base_extractor import BaseNFEExtractor
 from app.services.extractors.extractor_factory import ExtractorFactory
 from app.services.nfe_pipeline import NfePipeline
 from app.services.normalizers.nfe_normalizer import NfeNormalizer
+from app.services.persistence.nfe_persistence_service import (
+    NFEPersistenceService,
+)
 
 def build_nfe_data(
     *,
@@ -67,6 +71,8 @@ async def test_process_executes_pipeline_in_correct_order() -> None:
         ncm_code="09012100",
     )
 
+    persisted_nfe = Mock(spec=NFEData)
+
     async def fetch(url: str) -> str:
         execution_order.append("fetch")
         return "<html></html>"
@@ -75,6 +81,7 @@ async def test_process_executes_pipeline_in_correct_order() -> None:
         execution_order.append("create_extractor")
         return extractor
 
+    @abstractmethod
     def extract(html: str) -> NFEData:
         execution_order.append("extract")
         return extracted_data
@@ -89,11 +96,21 @@ async def test_process_executes_pipeline_in_correct_order() -> None:
         assert data is normalized_data
         return enriched_data
 
+    async def persist(
+            *,
+            nfe_data: NFEData,
+            user_id: int
+    ) -> NFEData:
+        execution_order.append("persist")
+        assert nfe_data is enriched_data
+        assert user_id == 10
+        return persisted_nfe
+
     nfe_client = Mock(spec=NFEClient)
-    nfe_client.fetch = AsyncMock(side_effect=fetch)
+    nfe_client.fetch_nfe_html = AsyncMock(side_effect=fetch)
 
     extractor = Mock(spec=BaseNFEExtractor)
-    extractor.extract.side_effect = extract
+    extractor.extract = Mock(side_effect=extract)
 
     extractor_factory = Mock(spec=ExtractorFactory)
     extractor_factory.create.side_effect = create_extractor
@@ -104,15 +121,20 @@ async def test_process_executes_pipeline_in_correct_order() -> None:
     enrichment_service = Mock(spec=NFEEnrichmentService)
     enrichment_service.enrich = AsyncMock(side_effect=enrich)
 
+    persistence_service = Mock(spec=NFEPersistenceService)
+    persistence_service.persist = AsyncMock(side_effect=persist)
+
     pipeline = NfePipeline(
         client=nfe_client,
         extractor_factory=extractor_factory,
         normalizer=normalizer,
         enrichment_service=enrichment_service,
+        persistence_service=persistence_service,
     )
 
     result = await pipeline.process(
         "https://example.com/nfce",
+        user_id= 10,
     )
 
     assert execution_order == [
@@ -121,8 +143,9 @@ async def test_process_executes_pipeline_in_correct_order() -> None:
         "extract",
         "normalize",
         "enrich",
+        "persist",
     ]
-    assert result is enriched_data
+    assert result is persisted_nfe
 
 @pytest.mark.asyncio
 async def test_process_passes_correct_data_between_stages() -> None:
@@ -141,11 +164,13 @@ async def test_process_passes_correct_data_between_stages() -> None:
         ncm_code="09012100",
     )
 
+    persisted_nfe = Mock(spec=NFEData)
+
     nfe_client = Mock(spec=NFEClient)
-    nfe_client.fetch = AsyncMock(return_value=html)
+    nfe_client.fetch_nfe_html = AsyncMock(return_value=html)
 
     extractor = Mock(spec=BaseNFEExtractor)
-    extractor.extract.return_value = extracted_data
+    extractor.extract = Mock(return_value=extracted_data)
 
     extractor_factory = Mock(spec=ExtractorFactory)
     extractor_factory.create.return_value = extractor
@@ -158,21 +183,41 @@ async def test_process_passes_correct_data_between_stages() -> None:
         return_value=enriched_data,
     )
 
+    persistence_service = Mock(spec=NFEPersistenceService)
+    persistence_service.persist = AsyncMock(
+        return_value=persisted_nfe,
+    )
+
     pipeline = NfePipeline(
         client=nfe_client,
         extractor_factory=extractor_factory,
         normalizer=normalizer,
         enrichment_service=enrichment_service,
+        persistence_service=persistence_service,
     )
 
     qr_code_url = "https://example.com/nfce"
+    user_id = 25
 
-    result = await pipeline.process(qr_code_url)
+    result = await pipeline.process(qr_code_url, user_id=user_id)
 
-    nfe_client.fetch.assert_awaited_once_with(qr_code_url)
+    nfe_client.fetch_nfe_html.assert_awaited_once_with(qr_code_url)
+
     extractor_factory.create.assert_called_once_with()
-    extractor.extract.assert_called_once_with(html)
-    normalizer.normalize.assert_called_once_with(extracted_data)
-    enrichment_service.enrich.assert_awaited_once_with(normalized_data)
 
-    assert result is enriched_data
+    extractor.extract.assert_called_once_with(html)
+
+    normalizer.normalize.assert_called_once_with(
+        extracted_data
+    )
+
+    enrichment_service.enrich.assert_awaited_once_with(
+        normalized_data
+    )
+
+    persistence_service.persist.assert_awaited_once_with(
+        nfe_data=enriched_data,
+        user_id=user_id,
+    )
+
+    assert result is persisted_nfe
