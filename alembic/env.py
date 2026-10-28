@@ -33,11 +33,16 @@ if config.config_file_name is not None:
 # Load settings
 settings = get_settings()
 
-# IMPORTANT:
-# Alembic does NOT support async engines
-sync_database_url = settings.database_url.replace("+asyncpg", "")
+sync_database_url = settings.database_url.replace(
+    "postgresql+asyncpg://",
+    "postgresql+psycopg2://",
+    1,
+)
 
-config.set_main_option("sqlalchemy.url", sync_database_url)
+config.set_main_option(
+    "sqlalchemy.url",
+    sync_database_url.replace("%", "%%"),
+)
 
 # Metadata for autogenerate
 target_metadata = Base.metadata
@@ -66,6 +71,11 @@ def run_migrations_online() -> None:
         config.get_section(config.config_ini_section),
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
+        connect_args=(
+            {"sslmode": "require"}
+            if settings.database_ssl
+            else {}
+        ),
     )
 
     with connectable.connect() as connection:
