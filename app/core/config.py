@@ -27,6 +27,9 @@ class Settings(BaseModel):
     # Database settings
     database_url: str = os.getenv("DATABASE_URL", "postgresql+asyncpg://postgres:postgres@localhost:5432/aidan")
 
+    # config to NEON
+    database_ssl: bool = os.getenv("DATABASE_SSL", "false").lower() == "true"
+
     # Security settings
     secret_key: str = os.getenv("SECRET_KEY", "your-secret-key")
 
