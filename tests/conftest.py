@@ -1,4 +1,4 @@
-import asyncio
+
 import pytest
 import pytest_asyncio 
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
@@ -36,22 +36,20 @@ async def client() -> AsyncIterator[AsyncClient]:
     ) as test_client:
         yield test_client
 
-@pytest.fixture(scope="session")
-def event_loop():
-    loop = asyncio.get_event_loop()
-    yield loop
-    loop.close()
-
-@pytest_asyncio.fixture 
+@pytest_asyncio.fixture
 async def db_session():
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+    try:
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)
 
-    async with AsyncSessionLocal() as session:
-        yield session
-
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.drop_all)
+        async with AsyncSessionLocal() as session:
+            yield session
+    finally:
+        try:
+            async with engine.begin() as conn:
+                await conn.run_sync(Base.metadata.drop_all)
+        finally:
+            await engine.dispose()
 
 @event.listens_for(engine.sync_engine, "connect")
 def enable_sqlite_foreign_keys(
