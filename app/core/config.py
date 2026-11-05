@@ -37,6 +37,15 @@ class Settings(BaseModel):
     
     access_token_expire_minutes: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "60"))
 
+    cors_origins: list[str] = [
+        origin.strip()
+        for origin in os.getenv(
+            "CORS_ORIGINS",
+            "http://localhost:5173,http://localhost:3000",
+        ).split(",")
+        if origin.strip()
+    ]
+
 @lru_cache
 def get_settings() -> Settings:
     """
